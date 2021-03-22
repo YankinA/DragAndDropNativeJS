@@ -4,6 +4,7 @@ const rowResizer = () => {
     const bottomSide = document.querySelector('.DnD-side_bottom');
     const main = document.querySelector('.DnD-main');
     const resizingLine = document.querySelector('.DnD-resizer_row');
+    const resizingColLine = document.querySelector('.DnD-resizer_col');
 
 
     // resize windows
@@ -29,6 +30,7 @@ const rowResizer = () => {
         
         leftSide.style.height = `${newTop}px`;
         rightSide.style.height = `${newTop}px`;
+        resizingColLine.height = `${newTop}px`;
         bottomSide.style.height = `${bottomEdge - leftSide.offsetHeight - 12}px`;
         resizingLine.style.top = `${newTop}px`;
       };
