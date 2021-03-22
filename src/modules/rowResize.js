@@ -30,7 +30,7 @@ const rowResizer = () => {
         
         leftSide.style.height = `${newTop}px`;
         rightSide.style.height = `${newTop}px`;
-        resizingColLine.height = `${newTop}px`;
+        resizingColLine.style.height = `${newTop}px`;
         bottomSide.style.height = `${bottomEdge - leftSide.offsetHeight - 12}px`;
         resizingLine.style.top = `${newTop}px`;
       };
