@@ -20,8 +20,8 @@ const colResizer = () => {
         if (newLeft > 1380) {
           newLeft = 1380;
         }
-
-        let rightEdge = main.offsetWidth - resizingLine.offsetWidth;
+        
+        let rightEdge = main.offsetWidth - (resizingLine.offsetWidth * 1.35);
         if (newLeft > rightEdge) {
           newLeft = rightEdge;
         }
