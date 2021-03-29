@@ -12,13 +12,16 @@ const colResizer = () => {
 
       const onMouseMove = (event) => {
         let newLeft = event.clientX - shiftX - main.getBoundingClientRect().left;
+        let newRight = event.clientX - shiftX - main.getBoundingClientRect().right;
+       // console.log(newLeft);
+        console.log(newRight);
         
         if (newLeft < 180) {
           newLeft = 180;
         } 
 
-        if (newLeft > 1380) {
-          newLeft = 1380;
+       if (newRight > -180) {
+          newLeft = newLeft - (190 + newRight);
         }
         
         let rightEdge = main.offsetWidth - (resizingLine.offsetWidth * 1.35);
@@ -26,9 +29,10 @@ const colResizer = () => {
           newLeft = rightEdge;
         }
         
+        resizingLine.style.left = `${newLeft}px`;
         leftSide.style.width = `${newLeft}px`;
         rightSide.style.width = `${rightEdge - leftSide.offsetWidth}px`;
-        resizingLine.style.left = `${newLeft}px`;
+         
       };
 
       const onMouseUp = (event) => {
