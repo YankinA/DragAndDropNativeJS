@@ -1,10 +1,8 @@
 const rowResizer = () => {
-    const leftSide = document.querySelector('.DnD-side_left');
-    const rightSide = document.querySelector('.DnD-side_right');
     const bottomSide = document.querySelector('.DnD-side_bottom');
+    const sideWrapper = document.querySelector('.side-wrapper');
     const main = document.querySelector('.DnD-main');
     const resizingLine = document.querySelector('.DnD-resizer_row');
-    const resizingColLine = document.querySelector('.DnD-resizer_col');
 
 
     // resize windows
@@ -28,10 +26,8 @@ const rowResizer = () => {
           newTop = bottomEdge;
         }
         
-        leftSide.style.height = `${newTop}px`;
-        rightSide.style.height = `${newTop}px`;
-        resizingColLine.style.height = `${newTop}px`;
-        bottomSide.style.height = `${bottomEdge - leftSide.offsetHeight - 12}px`;
+        sideWrapper.style.height = `${newTop}px`;
+        bottomSide.style.height = `${bottomEdge - sideWrapper.offsetHeight - 12}px`;
         resizingLine.style.top = `${newTop}px`;
       };
 
